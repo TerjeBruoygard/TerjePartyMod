@@ -47,7 +47,7 @@ modded class PlayerBase
 	
 	override void SetActionsRemoteTarget(out TInputActionMap InputActionMap)
 	{
-		super.SetActions(InputActionMap);
+		super.SetActionsRemoteTarget(InputActionMap);
 		
 		AddAction(ActionSendInvite, InputActionMap);
 		AddAction(ActionAcceptInvite, InputActionMap);
