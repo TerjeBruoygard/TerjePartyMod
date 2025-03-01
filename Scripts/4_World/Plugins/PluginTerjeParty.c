@@ -34,6 +34,10 @@ class PluginTerjeParty extends PluginBase
 					
 					ctx.Close();
 				}
+				else
+				{
+					Print("[TERJE PARTY]: Failed to read: " + m_clientDataFilePath);
+				}
 			}
 		}
 		
@@ -135,7 +139,7 @@ class PluginTerjeParty extends PluginBase
 	
 	bool ContainsPlayerInParty(string guid)
 	{
-		if (GetGame().IsClient() && m_clientPartyMembers)
+		if (GetGame().IsClient() && m_clientPartyMembers != null)
 		{
 			return m_clientPartyMembers.Find(guid) != -1;
 		}
@@ -147,7 +151,7 @@ class PluginTerjeParty extends PluginBase
 	
 	bool ContainsPlayerInInvites(string guid)
 	{
-		if (GetGame().IsClient() && m_clientInvites)
+		if (GetGame().IsClient() && m_clientInvites != null)
 		{
 			return m_clientInvites.Find(guid) != -1;
 		}

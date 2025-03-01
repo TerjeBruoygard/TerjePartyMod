@@ -61,7 +61,7 @@ modded class IngameHud
 									
 									vector screenPos = GetGame().GetScreenPos(worldPos);
 									vector localPos = localPlayer.GetWorldPosition();
-									if (screenPos[2] > 1 && vector.DistanceSq(localPos, myLocalPos) < maxVisiblePos * maxVisiblePos)
+									if ((screenPos[0] > 0) && (screenPos[1] > 0) && (screenPos[2] > 0.5) && vector.Distance(localPos, myLocalPos) < maxVisiblePos)
 									{
 										pinWidget2.SetScreenPos(screenPos[0], screenPos[1]);
 										pinWidget2.FindAnyWidget("PinImage").SetColor(localPlayer.GetTerjePartyPinColor());
